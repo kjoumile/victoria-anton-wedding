@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Виктория и Антон — свадебное приглашение</title>
+  <meta name="description" content="Свадебное приглашение Виктории и Антона на 22 августа 2026 года">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f9f6ef;
+      --paper-soft: #fffdf8;
+      --ink: #25231f;
+      --muted: #756d65;
+      --rose: #d996b2;
+      --rose-dark: #a85f80;
+      --sage: #788c7a;
+      --line: rgba(37, 35, 31, 0.14);
+      --shadow: 0 26px 70px rgba(56, 43, 32, 0.13);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(217, 150, 178, 0.16), transparent 24rem),
+        linear-gradient(90deg, rgba(120, 140, 122, 0.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(120, 140, 122, 0.08) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 44px 44px, 44px 44px, auto;
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px clamp(18px, 4vw, 56px);
+      background: rgba(249, 246, 239, 0.86);
+      border-bottom: 1px solid rgba(37, 35, 31, 0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 2vw, 28px);
+      color: var(--muted);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links a {
+      padding: 6px 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+      border-color: var(--rose);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 94svh;
+      display: grid;
+      place-items: center;
+      padding: 100px clamp(18px, 5vw, 70px) 70px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(rgba(249, 246, 239, 0.52), rgba(249, 246, 239, 0.72)),
+        url("https://weddingpost.site/images/1115513/fffb4b_20260509103938.jpg") center / cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 7vw;
+      z-index: -1;
+      border: 1px solid rgba(37, 35, 31, 0.18);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(820px, 100%);
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--rose-dark);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(58px, 11vw, 148px);
+    }
+
+    .amp {
+      display: block;
+      margin: 0.1em 0;
+      color: var(--rose-dark);
+      font-size: clamp(24px, 4vw, 48px);
+      font-weight: 500;
+    }
+
+    .hero-date {
+      margin: 26px auto 0;
+      width: fit-content;
+      padding-top: 18px;
+      border-top: 1px solid var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 42px);
+    }
+
+    .hero-note {
+      max-width: 620px;
+      margin: 22px auto 0;
+      color: #403a35;
+      font-size: clamp(16px, 2vw, 19px);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 22px;
+      border: 1px solid var(--rose-dark);
+      border-radius: 999px;
+      background: var(--rose);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--rose-dark);
+    }
+
+    .button.secondary {
+      background: rgba(255, 253, 248, 0.62);
+      color: var(--rose-dark);
+    }
+
+    section {
+      padding: clamp(64px, 9vw, 118px) clamp(18px, 5vw, 70px);
+    }
+
+    .section-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      margin-bottom: 26px;
+      text-align: center;
+      font-size: clamp(40px, 6vw, 74px);
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: var(--serif);
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.25;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 44px auto 0;
+      max-width: 760px;
+    }
+
+    .timebox {
+      min-height: 110px;
+      display: grid;
+      place-items: center;
+      padding: 18px 10px;
+      background: rgba(255, 253, 248, 0.72);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .timebox strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+    }
+
+    .timebox span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .photo-band {
+      background: var(--paper-soft);
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      align-items: center;
+      gap: clamp(16px, 3vw, 34px);
+    }
+
+    .portrait {
+      overflow: hidden;
+      border-radius: 999px 999px 8px 8px;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 5;
+      background: #eee5dc;
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .quote {
+      padding: 28px 18px;
+      text-align: center;
+    }
+
+    .quote p {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 70px);
+      line-height: 1.02;
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 18px;
+      color: var(--sage);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .details {
+      background: #f9eaf1;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      max-width: 820px;
+      margin: 36px auto 0;
+    }
+
+    .event {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 22px;
+      align-items: start;
+      padding: 24px;
+      background: rgba(255, 253, 248, 0.72);
+      border: 1px solid rgba(168, 95, 128, 0.16);
+    }
+
+    .event time {
+      color: var(--rose-dark);
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .event h3 {
+      font-size: 30px;
+    }
+
+    .event p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .info-card {
+      padding: 28px;
+      background: var(--paper-soft);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .info-card h3 {
+      color: var(--rose-dark);
+      font-size: 30px;
+    }
+
+    .info-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .location {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(22px, 5vw, 52px);
+      align-items: stretch;
+    }
+
+    .location-text {
+      display: grid;
+      align-content: center;
+      min-height: 430px;
+    }
+
+    .location-text .section-title {
+      text-align: left;
+    }
+
+    .address {
+      margin: 18px 0 0;
+      font-style: normal;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .map-frame {
+      min-height: 430px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #e9e2d8;
+      box-shadow: var(--shadow);
+    }
+
+    .map-frame iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      border: 0;
+      filter: saturate(0.8);
+    }
+
+    .rsvp {
+      background:
+        linear-gradient(rgba(249, 246, 239, 0.9), rgba(249, 246, 239, 0.94)),
+        url("https://weddingpost.site/images/1115513/fffb4b_20260509103938.jpg") center / cover;
+    }
+
+    .rsvp-box {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      padding: clamp(28px, 6vw, 54px);
+      background: rgba(255, 253, 248, 0.82);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      padding: 12px 14px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .form-status {
+      min-height: 24px;
+      margin: 14px 0 0;
+      color: var(--sage);
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 34px 18px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 780px) {
+      .nav {
+        align-items: flex-start;
+        padding: 12px 18px;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      .nav-links {
+        max-width: 210px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 6px 12px;
+        font-size: 11px;
+        text-align: right;
+      }
+
+      .hero {
+        min-height: 92svh;
+        padding-top: 112px;
+      }
+
+      .hero::after {
+        inset: 18px;
+        top: 86px;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .photo-grid,
+      .location,
+      .info-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-grid {
+        gap: 22px;
+      }
+
+      .quote {
+        order: -1;
+      }
+
+      .event {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .location-text {
+        min-height: auto;
+      }
+
+      .location-text .section-title {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .nav-links a:nth-child(n+4) {
+        display: none;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .timebox {
+        min-height: 96px;
+      }
+
+      .info-card,
+      .event {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav" aria-label="Навигация">
+    <a class="brand" href="#top">Виктория и Антон</a>
+    <nav class="nav-links">
+      <a href="#invite">Приглашение</a>
+      <a href="#schedule">Расписание</a>
+      <a href="#details">Детали</a>
+      <a href="#location">Карта</a>
+      <a href="#rsvp">Ответ</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow">Будем счастливы разделить с вами наш самый незабываемый день</p>
+        <h1 id="hero-title">Виктория <span class="amp">и</span> Антон</h1>
+        <p class="hero-date">22 августа 2026</p>
+        <p class="hero-note">Ждем вас на свадьбе. Пусть этот день станет теплой историей, которую мы будем вспоминать вместе.</p>
+        <div class="hero-actions">
+          <a class="button" href="#rsvp">Подтвердить присутствие</a>
+          <button class="button secondary" type="button" id="calendarButton">Добавить в календарь</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="invite" aria-labelledby="invite-title">
+      <div class="section-inner">
+        <h2 class="section-title" id="invite-title">Дорогой гость</h2>
+        <p class="intro">Мы рады сообщить вам, что 22.08.2026 состоится самое главное торжество в нашей жизни — день нашей свадьбы.</p>
+        <p class="lead">Приглашаем вас разделить с нами радость этого незабываемого дня. Сбор гостей начнется в 10:00.</p>
+        <div class="countdown" aria-label="Обратный отсчет до свадьбы">
+          <div class="timebox"><div><strong id="days">00</strong><span>дней</span></div></div>
+          <div class="timebox"><div><strong id="hours">00</strong><span>часов</span></div></div>
+          <div class="timebox"><div><strong id="minutes">00</strong><span>минут</span></div></div>
+          <div class="timebox"><div><strong id="seconds">00</strong><span>секунд</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-band" aria-label="Фотографии пары">
+      <div class="section-inner photo-grid">
+        <figure class="portrait">
+          <img src="https://weddingpost.site/images/1115513/72acde_20260509104333.jpg" alt="Жених">
+        </figure>
+        <div class="quote">
+          <p>Там, где посеяна любовь, растет радость!</p>
+          <small>Жених и невеста</small>
+        </div>
+        <figure class="portrait">
+          <img src="https://weddingpost.site/images/1115513/653151_20260509104314.jpg" alt="Невеста">
+        </figure>
+      </div>
+    </section>
+
+    <section class="details" id="schedule" aria-labelledby="schedule-title">
+      <div class="section-inner">
+        <h2 class="section-title" id="schedule-title">Свадебное расписание</h2>
+        <div class="timeline">
+          <article class="event">
+            <time datetime="2026-08-22T12:00">12:00</time>
+            <div>
+              <h3>Торжественная регистрация брака</h3>
+              <p>Английская набережная, 28. Залы ЗАГСа Адмиралтейского района.</p>
+            </div>
+          </article>
+          <article class="event">
+            <time datetime="2026-08-22T14:00">14:00</time>
+            <div>
+              <h3>Фуршет</h3>
+              <p>Банкетный зал. Время для общения, легких закусок и первых поздравлений.</p>
+            </div>
+          </article>
+          <article class="event">
+            <time datetime="2026-08-22T15:00">15:00</time>
+            <div>
+              <h3>Фотосессия</h3>
+              <p>Банкетный зал. До банкета будет время познакомиться ближе и сделать памятные кадры.</p>
+            </div>
+          </article>
+          <article class="event">
+            <time datetime="2026-08-22T17:00">17:00</time>
+            <div>
+              <h3>Праздничный банкет</h3>
+              <p>Банкетный зал. Ужин, музыка, теплые слова и главное настроение вечера.</p>
+            </div>
+          </article>
+          <article class="event">
+            <time datetime="2026-08-22T23:00">23:00</time>
+            <div>
+              <h3>Окончание праздничного дня</h3>
+              <p>Терраса ресторана. Даже такой день когда-то подходит к концу.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" aria-labelledby="details-title">
+      <div class="section-inner">
+        <h2 class="section-title" id="details-title">Важные детали</h2>
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>Меню</h3>
+            <p>Меню разнообразно. Сообщите нам заранее, если у вас есть предпочтения или диетические ограничения.</p>
+          </article>
+          <article class="info-card">
+            <h3>Подарки</h3>
+            <p>Ваше присутствие — самый значимый подарок. Вместо цветов будем рады альтернативе: вино или подарок в денежном эквиваленте.</p>
+          </article>
+          <article class="info-card">
+            <h3>Примечание</h3>
+            <p>Будем благодарны, если вы воздержитесь от криков "Горько": поцелуй — это знак чувств, а не действие по заказу.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="location" aria-labelledby="location-title">
+      <div class="section-inner location">
+        <div class="location-text">
+          <h2 class="section-title" id="location-title">Где встречаемся</h2>
+          <p class="lead">Регистрация пройдет в ЗАГСе Адмиралтейского района. Далее праздник продолжится в банкетном зале.</p>
+          <address class="address">
+            22 августа 2026, 12:00<br>
+            Санкт-Петербург, Английская набережная, 28
+          </address>
+          <p class="hero-actions" style="justify-content:flex-start;">
+            <a class="button secondary" href="https://yandex.ru/maps/?text=Санкт-Петербург,%20Английская%20набережная,%2028" target="_blank" rel="noopener">Открыть карту</a>
+          </p>
+        </div>
+        <div class="map-frame" aria-label="Карта места регистрации">
+          <iframe title="Карта: Английская набережная, 28" src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург%2C%20Английская%20набережная%2C%2028&z=15"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
+      <div class="rsvp-box">
+        <h2 class="section-title" id="rsvp-title">Подтверждение</h2>
+        <p class="lead">Пожалуйста, подтвердите свое присутствие до 05.06.2026. Форма сохранит ответ на этом устройстве.</p>
+        <form id="rsvpForm">
+          <div class="form-grid">
+            <label>
+              Имя и фамилия
+              <input name="name" type="text" autocomplete="name" required placeholder="Например, Иван Петров">
+            </label>
+            <label>
+              Присутствие
+              <select name="attendance" required>
+                <option value="">Выберите ответ</option>
+                <option>Буду с радостью</option>
+                <option>Буду с парой</option>
+                <option>К сожалению, не смогу</option>
+              </select>
+            </label>
+            <label>
+              Телефон
+              <input name="phone" type="tel" autocomplete="tel" placeholder="+7">
+            </label>
+            <label>
+              Алкоголь
+              <select name="drinks">
+                <option>Без предпочтений</option>
+                <option>Вино</option>
+                <option>Шампанское</option>
+                <option>Крепкий алкоголь</option>
+                <option>Не буду пить алкоголь</option>
+              </select>
+            </label>
+            <label class="full">
+              Комментарий
+              <textarea name="message" placeholder="Диетические ограничения, ребенок на празднике или теплое пожелание"></textarea>
+            </label>
+          </div>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+          <button class="button" type="submit">Отправить ответ</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    С любовью, Виктория и Антон. 22 августа 2026.
+  </footer>
+
+  <script>
+    const weddingDate = new Date("2026-08-22T12:00:00+03:00");
+    const countdownNodes = {
+      days: document.getElementById("days"),
+      hours: document.getElementById("hours"),
+      minutes: document.getElementById("minutes"),
+      seconds: document.getElementById("seconds")
+    };
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const diff = weddingDate.getTime() - Date.now();
+      if (diff <= 0) {
+        countdownNodes.days.textContent = "00";
+        countdownNodes.hours.textContent = "00";
+        countdownNodes.minutes.textContent = "00";
+        countdownNodes.seconds.textContent = "00";
+        return;
+      }
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      countdownNodes.days.textContent = pad(days);
+      countdownNodes.hours.textContent = pad(hours);
+      countdownNodes.minutes.textContent = pad(minutes);
+      countdownNodes.seconds.textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    window.setInterval(updateCountdown, 1000);
+
+    document.getElementById("calendarButton").addEventListener("click", () => {
+      const ics = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Wedding Invitation//Victoria Anton//RU",
+        "BEGIN:VEVENT",
+        "UID:victoria-anton-wedding-20260822@example.local",
+        "DTSTAMP:20260509T000000Z",
+        "DTSTART:20260822T090000Z",
+        "DTEND:20260822T200000Z",
+        "SUMMARY:Свадьба Виктории и Антона",
+        "LOCATION:Санкт-Петербург, Английская набережная, 28",
+        "DESCRIPTION:Свадебное торжество Виктории и Антона",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "victoria-anton-wedding.ics";
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
+
+    document.getElementById("rsvpForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const data = Object.fromEntries(new FormData(form).entries());
+      localStorage.setItem("victoria-anton-rsvp", JSON.stringify({
+        ...data,
+        savedAt: new Date().toISOString()
+      }));
+      document.getElementById("formStatus").textContent = "Спасибо! Ваш ответ сохранен.";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
