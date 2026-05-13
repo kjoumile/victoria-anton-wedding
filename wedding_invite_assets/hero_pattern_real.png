@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weddingpost Global - Свадебный сервис свадебных приглашений по всему миру</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Weddingpost Global - Свадебные приглашения онлайн по всему миру">
+    <meta property="og:description" content="WeddingPost - это сервис, который с уважением относится к каждой культуре и традициям. Создайте идеальные свадебные приглашения за пару кликов.">
+    <meta property="og:image" content="https://weddingpost.info/img/nail.png">
+    <meta property="og:url" content="https://weddingpost.info/">
+    <meta property="og:type" content="website">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://weddingpost.ru/src/icons/apple-touch-icon.png?ver=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://weddingpost.ru/src/icons/favicon-32x32.png?ver=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://weddingpost.ru/src/icons/favicon-16x16.png?ver=2">
+    <link rel="manifest" href="https://weddingpost.ru/src/icons/site.webmanifest?ver=2">
+    <link rel="mask-icon" href="https://weddingpost.ru/src/icons/safari-pinned-tab.svg?ver=2" color="#ff8e78">
+    <link rel="shortcut icon" href="https://weddingpost.ru/src/icons/favicon.ico?ver=2">
+    <meta name="apple-mobile-web-app-title" content="Weddingpost Global">
+    <meta name="application-name" content="Weddingpost Global">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="https://weddingpost.ru/src/icons/browserconfig.xml?ver=2">
+    <meta name="theme-color" content="#ffffff">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #photo {
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+        }
+        .container-fluid {
+            height: 100vh;
+        }
+        .row {
+            height: 100%;
+        }
+        .col-md-8 {
+            padding: 0;
+        }
+        .col-md-4 {
+            background: #f8f9fa;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .header p{
+        text-align:left;
+        }
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background: #f3623e;
+            color: #fff;
+            font-weight: 800;
+            text-decoration: none !important;
+            border-radius: 50px;
+            padding: 15px;
+            border: 0px;
+            width: 100%;
+        }
+        .btn-primary:hover {
+            background-color: #110019;
+            color: #fff;
+        }
+        .soon {
+            font-style: italic;
+            color: #999;
+            margin-left: 5px;
+        }
+        @media (max-width: 768px) {
+            #photo {
+                height: 50vh;
+            }
+                    .header {
+        text-align:center;
+        }
+        }
+        .language-selector {
+            margin: 10px 0;
+        }
+        .language-selector a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #f3623e;
+        }
+        .language-selector a.selected {
+            color: #110019 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <img id="photo" src="/img/ru.jpg" alt="Свадебное фото">
+            </div>
+            <div class="col-md-4">
+                <div class="header">
+                    <img src="https://weddingpost.ru/src/img/logo_new.png" alt="WeddingPost Logo" class="logo">
+                    <div class="language-selector">
+                        <a href="en.html">EN</a>
+                        <a href="pt.html">PT</a>
+                        <a class="selected" href="#">RU</a>
+                        <a href="kz.html">KZ</a>
+                    </div>
+                    <p>Weddingpost (Ведингпост) - это сервис, который с уважением относится к каждой культуре и традициям, сочетая лучшие свадебные стили со всего мира с современными технологиями. Мы предлагаем свыше 1000 дизайнов на более чем 5 языках, позволяя создать идеальные приглашения всего в пару кликах. Наши приглашения не только впечатляют гостей, но и упрощают организацию банкета. Мы лидеры рынка онлайн свадебных приглашений. Выберите страну, чтобы перейти на локальный сайт страны:</p>
+                </div>
+                <select class="form-control mb-3" id="countrySelect" onchange="updatePhoto()">
+                    <option value="Russia">Россия</option>
+                    <option value="Kazakhstan">Казахстан</option>
+                    <option value="Belarus">Беларусь</option>
+                    <option value="USA">США</option>
+                    <option value="Portugal" disabled>Португалия<span class="soon"> (скоро)</span></option>
+                    <option value="Poland" disabled>Польша<span class="soon"> (скоро)</span></option>
+                    <option value="Uzbekistan" disabled>Узбекистан<span class="soon"> (скоро)</span></option>
+                </select>
+                <a id="countryLink" class="btn btn-primary btn-link" target="_blank">Перейти на сайт</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Ссылки на свадебные фотографии для каждой страны
+        var countryData = {
+            Russia: { photo: "/img/ru.jpg", url: "https://weddingpost.ru" },
+            Kazakhstan: { photo: "/img/kz.jpg", url: "https://weddingpost.kz" },
+            Belarus: { photo: "/img/by.jpg", url: "https://weddingpost.by" },
+            Portugal: { photo: "/img/pt.jpg", url: "https://weddingpost.pt" },
+            Poland: { photo: "/img/pl.jpg", url: "https://weddingpost.pl" },
+            Uzbekistan: { photo: "/img/uz.jpg", url: "https://weddingpost.uz" },
+            USA: { photo: "/img/us.jpg", url: "https://galabox.io" }
+        };
+
+        function updatePhoto() {
+            var selectedCountry = document.getElementById('countrySelect').value;
+            var data = countryData[selectedCountry];
+
+            // Обновление фото
+            document.getElementById('photo').src = data.photo;
+
+            // Обновление ссылки на сайт
+            document.getElementById('countryLink').href = data.url;
+        }
+
+        // Инициализация с первой страной
+        updatePhoto();
+    </script>
+</body>
+</html>
