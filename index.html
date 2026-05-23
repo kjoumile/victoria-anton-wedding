@@ -3,11 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Виктория и Антон | Приглашение на свадьбу</title>
+  <title>Антон и Виктория | Приглашение на свадьбу</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600;700&family=Marck+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: "Nicoletta Script SHA";
+      src: url("wedding_invite_assets/Nicoletta Script SHA_1.otf") format("opentype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
     :root {
       --paper: #f9f6ef;
       --paper-soft: #fffdf8;
@@ -17,7 +25,7 @@
       --rose-deep: #c7799b;
       --muted: #7a7067;
       --white: #ffffff;
-      --invite-bg: url("wedding_invite_assets/фон.jpg");
+      --invite-bg: url("wedding_invite_assets/фон.jpg?v=20260523");
     }
 
     * {
@@ -31,12 +39,13 @@
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        radial-gradient(circle at 22px 22px, rgba(217, 150, 178, 0.16) 0 1.2px, transparent 1.5px),
-        radial-gradient(circle at 98px 64px, rgba(217, 150, 178, 0.1) 0 1.4px, transparent 1.7px),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0)),
-        var(--paper);
-      background-size: 140px 140px, 140px 140px, auto, auto;
+      background-color: var(--paper);
+      background-image:
+        linear-gradient(rgba(255, 251, 250, 0.5), rgba(255, 251, 250, 0.58)),
+        var(--invite-bg);
+      background-position: center top;
+      background-repeat: repeat-y;
+      background-size: 430px auto;
       font-family: "Cormorant Infant", Georgia, serif;
     }
 
@@ -61,11 +70,11 @@
       inset: 0;
       z-index: -1;
       background-image:
-        linear-gradient(rgba(255, 251, 250, 0.66), rgba(255, 252, 251, 0.8)),
+        linear-gradient(rgba(255, 251, 250, 0.46), rgba(255, 252, 251, 0.6)),
         var(--invite-bg);
       background-position: center top;
-      background-repeat: no-repeat;
-      background-size: cover;
+      background-repeat: repeat-y;
+      background-size: 100% auto;
       pointer-events: none;
     }
 
@@ -87,7 +96,7 @@
     .section {
       position: relative;
       padding: 58px 26px;
-      background: rgba(255, 251, 250, 0.14);
+      background: transparent;
     }
 
     .hero {
@@ -97,7 +106,7 @@
       place-items: center;
       padding: 46px 22px 38px;
       text-align: center;
-      background: linear-gradient(rgba(255, 251, 250, 0.2), rgba(255, 252, 251, 0.08));
+      background: linear-gradient(rgba(255, 251, 250, 0.08), rgba(255, 252, 251, 0.03));
     }
 
     .hero::before {
@@ -108,41 +117,49 @@
       pointer-events: none;
     }
 
+    .hero::after {
+      content: none;
+    }
+
     .ornament {
       position: relative;
-      width: min(100%, 360px);
-      min-height: 612px;
-      padding: 122px 28px 46px;
-      background:
-        linear-gradient(180deg, #fff9f8 0%, #fffefb 38%, #fffdfb 100%);
-      border: 1px solid rgba(217, 150, 178, 0.32);
-      border-radius: 170px 170px 24px 24px;
-      box-shadow:
-        inset 0 0 0 14px rgba(255, 255, 255, 0.72),
-        inset 0 0 0 28px rgba(217, 150, 178, 0.1);
+      width: min(100%, 356px);
+      min-height: 620px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 92px 28px 44px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(255, 252, 251, 0.68) 100%
+      );
+      border: 1px solid rgba(217, 150, 178, 0.24);
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(172, 136, 151, 0.12);
+      backdrop-filter: blur(6px);
     }
 
     .ornament::before {
       content: "";
       position: absolute;
-      inset: 20px 22px;
-      border: 1px solid rgba(217, 150, 178, 0.24);
-      border-radius: 150px 150px 18px 18px;
+      inset: 12px;
+      border: 1px solid rgba(217, 150, 178, 0.18);
+      border-radius: 16px;
       pointer-events: none;
     }
 
     .ornament::after {
       content: "";
       position: absolute;
-      top: 54px;
+      top: 34px;
       left: 50%;
-      width: 170px;
-      height: 70px;
+      width: 138px;
+      height: 1px;
       transform: translateX(-50%);
-      border-top: 1px solid rgba(217, 150, 178, 0.36);
-      border-bottom: 1px solid rgba(217, 150, 178, 0.2);
-      border-radius: 50%;
-      opacity: 0.7;
+      background: linear-gradient(90deg, rgba(217, 150, 178, 0), rgba(217, 150, 178, 0.35), rgba(217, 150, 178, 0));
+      pointer-events: none;
     }
 
     .names {
@@ -150,24 +167,26 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: clamp(38px, 10vw, 40px);
-      line-height: 0.94;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-family: "Nicoletta Script SHA", "Segoe Script", cursive;
+      font-size: clamp(52px, 15vw, 68px);
+      line-height: 0.88;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
     }
 
     .name-line {
       display: block;
       width: 100%;
-      padding-left: 0.08em;
       text-align: center;
     }
 
     .and {
       display: block;
-      margin: 12px 0 6px;
-      font-size: 25px;
+      margin: 10px 0 6px;
+      font-family: "Nicoletta Script SHA", "Segoe Script", cursive;
+      font-size: 34px;
       font-weight: 400;
       text-transform: none;
       letter-spacing: 0;
@@ -175,34 +194,48 @@
 
     .hero-note {
       margin: 34px auto 18px;
+      max-width: 300px;
       font-size: 17px;
       line-height: 1.35;
       letter-spacing: 0.07em;
+      color: rgba(17, 17, 17, 0.92);
       text-transform: uppercase;
     }
 
     .date {
       margin: 0 0 8px;
       font-size: 25px;
+      color: rgba(17, 17, 17, 0.95);
     }
 
     .script {
       margin: 0;
-      font-family: "Marck Script", "Segoe Script", cursive;
-      font-size: 40px;
-      line-height: 1.08;
+      font-family: "Nicoletta Script SHA", "Segoe Script", cursive;
+      font-size: 42px;
+      line-height: 1.04;
       font-weight: 400;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
     }
 
     .countdown {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 6px;
+      gap: 8px;
       width: 100%;
       margin-top: 34px;
-      padding: 14px 12px;
-      background: rgba(255, 255, 255, 0.82);
-      border-radius: 40px;
+      max-width: 334px;
+      padding: 0;
+      background: none;
+      border: 0;
+      backdrop-filter: none;
+    }
+
+    .countdown-item {
+      padding: 10px 4px;
+      background: rgba(255, 255, 255, 0.36);
+      border: 1px solid rgba(217, 150, 178, 0.16);
+      border-radius: 999px;
     }
 
     .countdown-item b {
@@ -220,11 +253,9 @@
       position: relative;
       padding: 34px 24px;
       text-align: center;
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
-        repeating-linear-gradient(-45deg, rgba(217, 150, 178, 0.05) 0 1px, transparent 1px 15px),
-        var(--paper-soft);
-      border: 1px solid var(--paper-line);
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(217, 150, 178, 0.22);
+      backdrop-filter: blur(2px);
     }
 
     h2 {
@@ -367,6 +398,15 @@
       cursor: pointer;
     }
 
+    .form-status {
+      min-height: 24px;
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
     .timeline {
       display: grid;
       gap: 28px;
@@ -423,8 +463,8 @@
       }
 
       .ornament {
-        min-height: 580px;
-        padding: 112px 22px 38px;
+        min-height: 586px;
+        padding: 86px 18px 36px;
       }
 
       .event {
@@ -447,7 +487,7 @@
 
     <section class="hero" id="top">
       <div class="ornament">
-        <h1 class="names"><span class="name-line">Виктория</span><span class="and">и</span><span class="name-line">Антон</span></h1>
+        <h1 class="names"><span class="name-line">Антон</span><span class="and">и</span><span class="name-line">Виктория</span></h1>
         <p class="hero-note">Будем счастливы разделить с вами<br>наш самый незабываемый день</p>
         <p class="date">22 августа 2026</p>
         <p class="script">Ждем Вас на свадьбе!</p>
@@ -467,9 +507,9 @@
         <p>Мы рады сообщить Вам, что 22.08.2026 состоится самое главное торжество в нашей жизни - день нашей свадьбы!</p>
         <p>Приглашаем Вас разделить с нами радость этого незабываемого дня.</p>
         <p>Сбор гостей 22.08.2026 в 15:30<br>по адресу г. Дзержинск, Желнинское ш., д. 8</p>
-        <img class="photo photo-main" src="wedding_invite_assets/photo1.jpg" alt="Виктория и Антон">
+        <img class="photo photo-main" src="wedding_invite_assets/photo1.jpg" alt="Антон и Виктория">
         <p class="script">Там, где посеяна любовь,<br>растет счастье!</p>
-        <img class="photo photo-round" src="wedding_invite_assets/photo2.jpg" alt="Портрет Виктории и Антона">
+        <img class="photo photo-round" src="wedding_invite_assets/photo2.jpg" alt="Портрет Антона и Виктории">
         <p class="script">Антон</p>
         <img class="photo photo-round" src="wedding_invite_assets/photo3.jpg" alt="Свадебная фотография">
         <p class="script">Виктория</p>
@@ -486,7 +526,7 @@
         <h2>Подтверждение</h2>
         <p class="survey-note">Пожалуйста, подтвердите свое присутствие до 22.08.2026</p>
         <p class="survey-note">Пожалуйста, ответьте на вопросы, которые для вас подготовили Антон и Виктория</p>
-        <form class="form">
+        <form class="form" id="rsvpForm">
           <label>Ваше имя
             <input type="text" name="name" placeholder="Имя и фамилия">
           </label>
@@ -524,7 +564,8 @@
             <textarea name="message" placeholder="Напишите пожелание или комментарий"></textarea>
           </label>
 
-          <button class="button" type="button">Подтвердить</button>
+          <button class="button" type="submit">Подтвердить</button>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
         </form>
         <p class="script">Ждем Вас!</p>
       </div>
@@ -562,6 +603,9 @@
 
   <script>
     const target = new Date("2026-08-22T00:00:00+03:00");
+    const submitEndpoint = "PASTE_GOOGLE_APPS_SCRIPT_URL_HERE";
+    const responsesStorageKey = "weddingInvitationResponsesBackup";
+    const draftStorageKey = "weddingInvitationDraft";
     const parts = {
       weeks: document.getElementById("weeks"),
       days: document.getElementById("days"),
@@ -569,6 +613,84 @@
       minutes: document.getElementById("minutes"),
       seconds: document.getElementById("seconds")
     };
+    const form = document.getElementById("rsvpForm");
+    const formStatus = document.getElementById("formStatus");
+
+    function collectPayload() {
+      const formData = new FormData(form);
+
+      return {
+        savedAt: new Date().toISOString(),
+        name: formData.get("name") || "",
+        presence: formData.get("presence") || "",
+        alcohol: formData.getAll("alcohol"),
+        child: formData.get("child") || "",
+        message: formData.get("message") || ""
+      };
+    }
+
+    function saveDraft() {
+      localStorage.setItem(draftStorageKey, JSON.stringify(collectPayload()));
+    }
+
+    function restoreDraft() {
+      const raw = localStorage.getItem(draftStorageKey);
+
+      if (!raw) {
+        return;
+      }
+
+      try {
+        const draft = JSON.parse(raw);
+        form.elements.name.value = draft.name || "";
+        form.elements.message.value = draft.message || "";
+
+        for (const radio of form.querySelectorAll('input[name="presence"]')) {
+          radio.checked = radio.value === draft.presence;
+        }
+
+        for (const checkbox of form.querySelectorAll('input[name="alcohol"]')) {
+          checkbox.checked = (draft.alcohol || []).includes(checkbox.value);
+        }
+
+        for (const radio of form.querySelectorAll('input[name="child"]')) {
+          radio.checked = radio.value === draft.child;
+        }
+      } catch (error) {
+        localStorage.removeItem(draftStorageKey);
+      }
+    }
+
+    function saveLocalBackup(payload) {
+      const saved = JSON.parse(localStorage.getItem(responsesStorageKey) || "[]");
+      saved.push(payload);
+      localStorage.setItem(responsesStorageKey, JSON.stringify(saved));
+    }
+
+    async function sendToGoogleSheets(payload) {
+      if (!submitEndpoint || submitEndpoint === "PASTE_GOOGLE_APPS_SCRIPT_URL_HERE") {
+        return "Ответ сохранен локально. Для Google Sheets нужно вставить ссылку Apps Script.";
+      }
+
+      const body = new URLSearchParams();
+      body.set("savedAt", payload.savedAt);
+      body.set("name", payload.name);
+      body.set("presence", payload.presence);
+      body.set("child", payload.child);
+      body.set("message", payload.message);
+
+      for (const item of payload.alcohol) {
+        body.append("alcohol", item);
+      }
+
+      await fetch(submitEndpoint, {
+        method: "POST",
+        mode: "no-cors",
+        body
+      });
+
+      return "Ответ отправлен в Google Sheets.";
+    }
 
     function pad(value) {
       return String(value).padStart(2, "0");
@@ -595,6 +717,24 @@
 
     tick();
     setInterval(tick, 1000);
+
+    restoreDraft();
+    form.addEventListener("input", saveDraft);
+    form.addEventListener("change", saveDraft);
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      formStatus.textContent = "Сохраняем...";
+
+      try {
+        const payload = collectPayload();
+        saveLocalBackup(payload);
+        const message = await sendToGoogleSheets(payload);
+        localStorage.removeItem(draftStorageKey);
+        formStatus.textContent = message;
+      } catch (error) {
+        formStatus.textContent = "Не удалось отправить ответ. Локальная копия сохранена.";
+      }
+    });
   </script>
 </body>
 </html>
