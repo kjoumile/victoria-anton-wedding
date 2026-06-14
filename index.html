@@ -721,20 +721,43 @@
     restoreDraft();
     form.addEventListener("input", saveDraft);
     form.addEventListener("change", saveDraft);
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      formStatus.textContent = "Сохраняем...";
+   let isSubmitting = false;
+const submitButton = form.querySelector('[type="submit"]');
+const submitButtonText = submitButton ? submitButton.textContent : "";
 
-      try {
-        const payload = collectPayload();
-        saveLocalBackup(payload);
-        const message = await sendToGoogleSheets(payload);
-        localStorage.removeItem(draftStorageKey);
-        formStatus.textContent = message;
-      } catch (error) {
-        formStatus.textContent = "Не удалось отправить ответ. Локальная копия сохранена.";
-      }
-    });
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  if (isSubmitting) {
+    return;
+  }
+
+  isSubmitting = true;
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "Ваш ответ отправляется...";
+  }
+
+  formStatus.textContent = "Ваш ответ отправляется...";
+
+  try {
+    const payload = collectPayload();
+    saveLocalBackup(payload);
+    const message = await sendToGoogleSheets(payload);
+    localStorage.removeItem(draftStorageKey);
+    formStatus.textContent = message;
+  } catch (error) {
+    isSubmitting = false;
+
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = submitButtonText;
+    }
+
+    formStatus.textContent = "Не удалось отправить ответ. Локальная копия сохранена.";
+  }
+});
   </script>
 </body>
 </html>
