@@ -736,10 +736,9 @@ form.addEventListener("submit", async (event) => {
 
   if (submitButton) {
     submitButton.disabled = true;
-    submitButton.textContent = "Ваш ответ отправляется...";
+    submitButton.textContent = "Ваш ответ отправляется..";
   }
 
-  formStatus.textContent = "Ваш ответ отправлен";
 
   try {
     const payload = collectPayload();
@@ -747,6 +746,7 @@ form.addEventListener("submit", async (event) => {
     const message = await sendToGoogleSheets(payload);
     localStorage.removeItem(draftStorageKey);
     formStatus.textContent = message;
+    submitButton.textContent = "Отправлен";
   } catch (error) {
     isSubmitting = false;
 
